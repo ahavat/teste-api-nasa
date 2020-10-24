@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import api from '../../services/api';
+import { Container } from './style'
 
 interface Ipisctures {
   date: string;
@@ -16,38 +17,17 @@ const Home: React.FC = () => {
   }, [])
 
   async function loadpictures() {
-    const response = await api.get('&start_date=2020-10-23&end_date=2020-10-23')
+    const response = await api.get('apod?api_key=3XIaMWfxniNXrKU4El6uSRkb5OWWtfULUo6sBBhI&start_date=2020-10-23&end_date=2020-10-23')
     setpictures(response.data)
   }
 
   return (
-    <>
-      <button onClick={loadpictures}><br /></button>
-      <thead>
-        <tr>
-          <th>
-            1
-          </th>
-          <th>
-            1
-          </th>
-          <th>
-            1
-          </th>
-          <th>
-            1
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        {
-          pictures.map(picture =>
-            <><tr key={picture.hdurl} /><td>{picture.title}</td><td>{picture.date}</td>
-              <td>{picture.explanation}</td></>
-          )
-        }
-      </tbody>
-    </>
+    <Container>
+      <div className="header"></div>
+      <div className="body"></div>
+      <div className="body"></div>
+      <div className="footer"></div>
+    </Container>
   )
 }
 export default Home;
