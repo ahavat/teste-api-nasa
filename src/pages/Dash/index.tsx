@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 // import api from '../../services/api';
 import api from '../../services/api'
-import { Container } from './styles'
+import { Container, Header } from './styles'
 import * as BsIcons from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
@@ -25,11 +25,16 @@ const Dash: React.FC = () => {
     setpictures(response.data)
   }
 
-
   return (
-    <Container>
-      {pictures.map(picture =>
-        <div className="item2">
+
+    <><Header>
+      <h2>Teste Api da Nasa<br />
+      Clique nas imagens para exibir os detalhes</h2>
+    </Header>
+
+      <Container>
+
+        {pictures.map(picture => <div className="item2">
           <div className="cards">
             <Link id="textcard" key={picture.date} to={`/details/${picture.date}`}>
               <h4>{picture.date}</h4>
@@ -38,10 +43,8 @@ const Dash: React.FC = () => {
             </Link>
           </div>
         </div>
-      )
-      }
-    </Container >
-
+        )}
+      </Container></>
   )
 }
 export default Dash;

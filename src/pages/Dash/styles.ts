@@ -1,8 +1,25 @@
 import styled from 'styled-components';
 
-
 export const Header = styled.div`
-margin-top: 0px;
+display: flex;
+flex-direction: column;
+margin-top: -13px;
+margin-bottom: 15px;
+height: 100px;
+width: 880px;
+background: url('https://i.pinimg.com/originals/a1/c6/1f/a1c61f4d8f0b19c57da16a158a804939.jpg') no-repeat;
+opacity: 1.6;
+text-align: center;
+
+
+h2 {
+margin: 30px;
+color: #fff;
+font-family: sans-serif;
+font-size: 15px;
+}
+
+
 `;
 
 export const Container = styled.div`
@@ -17,6 +34,7 @@ background-color: #fff;
 flex-wrap: wrap-reverse;
 object-fit: cover;
 justify-content: center;
+
 
 .item2 {
   .cards {
